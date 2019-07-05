@@ -42,4 +42,15 @@
         app:layout_constraintStart_toEndOf="@+id/ivProfileImage"
         app:layout_constraintTop_toBottomOf="@+id/tvUserName" />
 
+    <ImageButton
+        android:id="@+id/btnReply"
+        android:layout_width="33dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvUserTweet"
+        app:layout_constraintTop_toBottomOf="@+id/tvUserTweet" />
+
 </android.support.constraint.ConstraintLayout>
