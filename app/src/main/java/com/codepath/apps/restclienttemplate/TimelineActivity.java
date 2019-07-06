@@ -168,7 +168,7 @@ public class TimelineActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (resultCode == RESULT_OK && resultCode == REQUEST_CODE) {
+        if (resultCode == RESULT_OK && requestCode == REQUEST_CODE) {
             Tweet tweet = (Tweet) data.getSerializableExtra("tweet");
             tweets.add(0, tweet);
             tweetAdapter.notifyItemInserted(0);

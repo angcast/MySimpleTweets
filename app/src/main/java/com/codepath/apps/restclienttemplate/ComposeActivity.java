@@ -10,8 +10,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.codepath.apps.restclienttemplate.models.Tweet;
-import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.JsonHttpResponseHandler;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.parceler.Parcels;
 
 import cz.msebera.android.httpclient.Header;
@@ -34,8 +36,6 @@ public class ComposeActivity extends AppCompatActivity {
         client = TwitterApp.getRestClient(this);
 
         textChange();
-
-
     }
 
     public void textViewParam (int count){
@@ -63,9 +63,11 @@ public class ComposeActivity extends AppCompatActivity {
     public void onClickTweet(View view){
         EditText et = (EditText) findViewById(R.id.etWords);
         String message = et.getText().toString();
-        client.sendTweet(message, new AsyncHttpResponseHandler() {
+        client.sendTweet(message, new JsonHttpResponseHandler() {
+
             @Override
-            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                super.onSuccess(statusCode, headers, response);
                 Intent i = new Intent();
                 Tweet tweet = new Tweet();
                 i.putExtra("tweet", Parcels.wrap(tweet)); // do i need to wrap it?
@@ -74,7 +76,40 @@ public class ComposeActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+            public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
+                super.onSuccess(statusCode, headers, response);
+                Intent i = new Intent();
+                Tweet tweet = new Tweet();
+                i.putExtra("tweet", Parcels.wrap(tweet)); // do i need to wrap it?
+                setResult(RESULT_OK,i);
+                finish();
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                super.onFailure(statusCode, headers, throwable, errorResponse);
+                Intent i = new Intent();
+                Tweet tweet = new Tweet();
+                i.putExtra("tweet", Parcels.wrap(tweet)); // do i need to wrap it?
+                setResult(RESULT_OK,i);
+                finish();
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONArray errorResponse) {
+                super.onFailure(statusCode, headers, throwable, errorResponse);
+                finish();
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+                super.onFailure(statusCode, headers, responseString, throwable);
+                finish();
+            }
+
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, String responseString) {
+                super.onSuccess(statusCode, headers, responseString);
                 finish();
             }
         });

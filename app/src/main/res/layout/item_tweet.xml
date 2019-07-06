@@ -20,13 +20,13 @@
     <TextView
         android:id="@+id/tvUserName"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_height="18dp"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.014"
+        android:textColor="	#000000"
+        app:layout_constraintEnd_toStartOf="@+id/time"
+        app:layout_constraintHorizontal_bias="0.048"
         app:layout_constraintStart_toEndOf="@+id/ivProfileImage"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -37,6 +37,7 @@
         android:layout_marginLeft="5dp"
         android:layout_marginEnd="8dp"
         android:text="TextView"
+        android:textColor="	#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/ivProfileImage"
@@ -45,12 +46,47 @@
     <ImageButton
         android:id="@+id/btnReply"
         android:layout_width="33dp"
-        android:layout_height="38dp"
+        android:layout_height="18dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
+        android:src="@mipmap/reply"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/tvUserTweet"
         app:layout_constraintTop_toBottomOf="@+id/tvUserTweet" />
+
+    <ImageButton
+        android:id="@+id/btnRetweet"
+        android:layout_width="26dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:src="@mipmap/retweet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.298"
+        app:layout_constraintStart_toEndOf="@+id/btnReply"
+        app:layout_constraintTop_toBottomOf="@+id/tvUserTweet" />
+
+    <ImageButton
+        android:id="@+id/btnLove"
+        android:layout_width="62dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="8dp"
+        android:src="@mipmap/love"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toEndOf="@+id/btnRetweet"
+        app:layout_constraintTop_toBottomOf="@+id/tvUserTweet" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/tvUserTweet"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
