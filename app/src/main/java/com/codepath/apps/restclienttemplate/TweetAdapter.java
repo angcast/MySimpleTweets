@@ -120,6 +120,24 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder>{
                         }
                     }
                 });
+
+                itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        int position = getAdapterPosition();
+                        Tweet tweet = tweets.get(position);
+                        Intent intent = new Intent(context, DetailsActivity.class);
+                        intent.putExtra("username",tweet.user.getUsername());
+                        intent.putExtra("name", tweet.user.getName());
+                        intent.putExtra("body", tweet.getBody());
+                        intent.putExtra("imageUrl", tweet.user.getProfileImageUrl());
+                        intent.putExtra("time",getRelativeTimeAgo(tweet.createdAt));
+                        context.startActivity(intent);
+                    }
+                });
+
+
+
             }
 
          }
