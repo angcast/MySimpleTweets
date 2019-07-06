@@ -13,6 +13,7 @@ import com.codepath.apps.restclienttemplate.models.Tweet;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.parceler.Parcels;
 
@@ -69,42 +70,37 @@ public class ComposeActivity extends AppCompatActivity {
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 super.onSuccess(statusCode, headers, response);
                 Intent i = new Intent();
-                Tweet tweet = new Tweet();
-                i.putExtra("tweet", Parcels.wrap(tweet)); // do i need to wrap it?
-                setResult(RESULT_OK,i);
-                finish();
+
+                try {
+                    Tweet tweet = Tweet.fromJSON(response);
+                    i.putExtra("tweet", Parcels.wrap(tweet));
+                    setResult(RESULT_OK,i);
+                    finish();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
             }
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
                 super.onSuccess(statusCode, headers, response);
-                Intent i = new Intent();
-                Tweet tweet = new Tweet();
-                i.putExtra("tweet", Parcels.wrap(tweet)); // do i need to wrap it?
-                setResult(RESULT_OK,i);
-                finish();
             }
 
             @Override
             public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
                 super.onFailure(statusCode, headers, throwable, errorResponse);
-                Intent i = new Intent();
-                Tweet tweet = new Tweet();
-                i.putExtra("tweet", Parcels.wrap(tweet)); // do i need to wrap it?
-                setResult(RESULT_OK,i);
-                finish();
             }
 
             @Override
             public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONArray errorResponse) {
                 super.onFailure(statusCode, headers, throwable, errorResponse);
-                finish();
             }
 
             @Override
             public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
                 super.onFailure(statusCode, headers, responseString, throwable);
-                finish();
             }
 
             @Override
