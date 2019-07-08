@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/miCompose"
-        android:icon="@mipmap/compose"
+        android:icon="@drawable/vector_compose_fab"
         android:onClick="onCompose"
         android:orderInCategory="1"
-        app:showAsAction="always"
-        android:title="Compose"/>
+        android:title="Compose"
+        app:showAsAction="always" />
 
     <item
         android:id="@+id/miActionProgress"

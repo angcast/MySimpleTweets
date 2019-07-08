@@ -19,7 +19,7 @@ public class DetailsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_details_adapter);
+        setContentView(R.layout.activity_details);
         tvUserName = (TextView) findViewById(R.id.tvUserName);
         tvUserName.setText(getIntent().getStringExtra("name")+" @"+getIntent().getStringExtra("username"));
         tvUserTweet = (TextView) findViewById(R.id.tvUserTweet);
