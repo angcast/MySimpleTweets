@@ -1,8 +1,10 @@
 package com.codepath.apps.restclienttemplate;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -35,6 +37,10 @@ public class ComposeActivity extends AppCompatActivity {
         textViewParam(charsLeft);
 
         client = TwitterApp.getRestClient(this);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setBackgroundColor(Color.parseColor("#38A1F3"));
+        toolbar.setTitle("New Tweet");
 
         textChange();
     }

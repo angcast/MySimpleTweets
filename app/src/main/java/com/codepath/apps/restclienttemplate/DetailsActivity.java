@@ -1,7 +1,9 @@
 package com.codepath.apps.restclienttemplate;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -25,6 +27,10 @@ public class DetailsActivity extends AppCompatActivity {
         time = (TextView) findViewById(R.id.time);
         time.setText(getIntent().getStringExtra("time"));
         ivProfileImage = (ImageView) findViewById(R.id.ivProfileImage);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setBackgroundColor(Color.parseColor("#38A1F3"));
+
 
         Glide.with(this)
                 .load(getIntent().getStringExtra("imageUrl"))

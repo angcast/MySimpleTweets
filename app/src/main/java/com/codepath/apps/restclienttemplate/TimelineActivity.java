@@ -50,6 +50,7 @@ public class TimelineActivity extends AppCompatActivity {
         rvTweets.setLayoutManager(new LinearLayoutManager(this));
         rvTweets.setAdapter(tweetAdapter);
 
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setBackgroundColor(Color.parseColor("#38A1F3"));
 
@@ -166,6 +167,7 @@ public class TimelineActivity extends AppCompatActivity {
         Intent i = new Intent(TimelineActivity.this, ComposeActivity.class);
         startActivityForResult(i, REQUEST_CODE );
     }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

@@ -14,8 +14,8 @@ public class TwitterClient extends OAuthBaseClient {
 
 	public static final BaseApi REST_API_INSTANCE = TwitterApi.instance();
 	public static final String REST_URL = "https://api.twitter.com/1.1";
-	public static final String REST_CONSUMER_KEY ="4KxocRp2Wh8RZ9cy1KJEjxGVy";
-	public static final String REST_CONSUMER_SECRET = "EeyJ4vEZN3al7c0C13bMwAY3pGc2RASrampYtvJvnX1kLDHKJf";
+	public static final String REST_CONSUMER_KEY ="TEkkex4tqDbKHf0vWafhdTNdG";
+	public static final String REST_CONSUMER_SECRET = "zcDJIfZPTT5Ivo5NqUuQ735ld3zuQVsugnP9Nsc38jx2NKYRVU";
 
 	public static final String FALLBACK_URL = "https://codepath.github.io/android-rest-client-template/success.html";
 
@@ -52,6 +52,23 @@ public class TwitterClient extends OAuthBaseClient {
 		params.put("status", message);
 		params.put("in_reply_to_status_id",uid);
 		client.post(apiUrl, params, handler);
+	}
+
+	public void createFavorite(long uid, AsyncHttpResponseHandler handler) {
+		String apiUrl = getApiUrl("favorites/create.json");
+		RequestParams params = new RequestParams();
+		params.put("id", uid);
+		client.post(apiUrl, params, handler);
+	}
+
+	public void destroyFavorite(long uid, AsyncHttpResponseHandler handler){
+		String apiUrl = getApiUrl("favorites/destroy.json");
+		RequestParams params = new RequestParams();
+		params.put("id", uid);
+		client.post(apiUrl, params, handler);
+	}
+	public void Retweet(long uid, AsyncHttpResponseHandler handler){
+
 	}
 
 }
