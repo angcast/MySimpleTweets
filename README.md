@@ -1,8 +1,8 @@
-# Project 3 - *Name of App Here*
+# Project 3 - *MySimpleTweets*
 
 **Name of your app** is an android app that allows a user to view his Twitter timeline and post a new tweet. The app utilizes [Twitter REST API](https://dev.twitter.com/rest/public).
 
-Time spent: **X** hours spent in total
+Time spent: **18** hours spent in total
 
 ## User Stories
 
@@ -23,7 +23,7 @@ The following **stretch** features are implemented:
 * [X] User can **see a counter with total number of characters left for tweet** on compose tweet page
 * [X] User can **pull down to refresh tweets timeline**
 * [X] User is using **"Twitter branded" colors and styles**
-* [ ] User sees an **indeterminate progress indicator** when any background or network task is happening
+* [ ] User sees an **indeterminate progress indicator** when any background or network task is happening - tried to implement!
 * [X] User can **select "reply" from detail view to respond to a tweet**
   * [X] User that wrote the original tweet is **automatically "@" replied in compose**
 * [X] User can tap a tweet to **open a detailed tweet view**
@@ -45,13 +45,13 @@ The following **bonus** features are implemented:
 
 The following **additional** features are implemented:
 
-* [ ] List anything else that you can get done to improve the app functionality!
+* [X] Changed the toolbar to an action bar and changed the name of the toolbar to Twitter
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='walkthrough2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
@@ -66,7 +66,7 @@ Describe any challenges encountered while building the app.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2019] [Angelica Castillejos]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
