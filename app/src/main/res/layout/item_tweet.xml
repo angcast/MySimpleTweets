@@ -11,10 +11,7 @@
         android:id="@+id/ivProfileImage"
         android:layout_width="53dp"
         android:layout_height="47dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/tvName"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginTop="32dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:color/background_dark" />
@@ -34,7 +31,7 @@
     <TextView
         android:id="@+id/tvUserTweet"
         android:layout_width="334dp"
-        android:layout_height="22dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:autoLink="web"

@@ -23,13 +23,16 @@
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rvTweets"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:background="#FFFFFF" />
 
     </android.support.v4.widget.SwipeRefreshLayout>
 
-    <include layout="@layout/activity_toolbar"/>
+    <include
+        layout="@layout/activity_toolbar"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-79dp" />
 
 </android.support.constraint.ConstraintLayout>

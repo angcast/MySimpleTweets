@@ -41,5 +41,8 @@ public class DetailsActivity extends AppCompatActivity {
                 .into(ivProfileImage);
     }
 
+    public void onClickClose(){
+        finish();
+    }
 
 }

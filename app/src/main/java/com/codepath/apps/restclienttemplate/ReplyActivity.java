@@ -77,6 +77,10 @@ public class ReplyActivity extends AppCompatActivity {
 
     }
 
+    public void onClickClose(View view){
+        finish();
+    }
+
 
 
 }

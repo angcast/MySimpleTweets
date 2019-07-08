@@ -27,6 +27,7 @@ public class ComposeActivity extends AppCompatActivity {
     TextView viewCharsLeft;
     TwitterClient client;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +36,8 @@ public class ComposeActivity extends AppCompatActivity {
         viewCharsLeft = (TextView) findViewById(R.id.wordCount);
         charsLeft = 240;
         textViewParam(charsLeft);
+
+
 
         client = TwitterApp.getRestClient(this);
 
@@ -116,6 +119,10 @@ public class ComposeActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void onClickClose(View view){
+        finish();
     }
 
 }

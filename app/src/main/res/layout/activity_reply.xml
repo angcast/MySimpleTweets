@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
     tools:context=".ComposeActivity">
 
     <EditText
@@ -30,6 +31,8 @@
         android:layout_marginBottom="36dp"
         android:onClick="onClickTweet"
         android:text="Reply"
+        android:textColor="@android:color/white"
+        android:background="#38A1F3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -41,6 +44,22 @@
         app:layout_constraintBottom_toTopOf="@+id/btnReply"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <include layout="@layout/activity_toolbar"/>
+    <include
+        layout="@layout/activity_toolbar" />
+
+    <ImageButton
+        android:id="@+id/closeReply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="356dp"
+        android:background="@android:color/white"
+        android:onClick="onClickClose"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.727"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/etReplyWords"
+        app:srcCompat="@drawable/ic_vector_close" />
 
 </android.support.constraint.ConstraintLayout>
