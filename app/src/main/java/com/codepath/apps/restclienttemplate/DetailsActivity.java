@@ -13,6 +13,7 @@ public class DetailsActivity extends AppCompatActivity {
 
     TextView tvUserName;
     TextView tvUserTweet;
+    TextView tvName;
     TextView time;
     ImageView ivProfileImage;
 
@@ -21,7 +22,9 @@ public class DetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
         tvUserName = (TextView) findViewById(R.id.tvUserName);
-        tvUserName.setText(getIntent().getStringExtra("name")+" @"+getIntent().getStringExtra("username"));
+        tvUserName.setText("@"+getIntent().getStringExtra("username"));
+        tvName = (TextView) findViewById(R.id.tvName);
+        tvName.setText(getIntent().getStringExtra("name"));
         tvUserTweet = (TextView) findViewById(R.id.tvUserTweet);
         tvUserTweet.setText(getIntent().getStringExtra("body"));
         time = (TextView) findViewById(R.id.time);
@@ -30,6 +33,7 @@ public class DetailsActivity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setBackgroundColor(Color.parseColor("#38A1F3"));
+        toolbar.setTitle("Twitter");
 
 
         Glide.with(this)

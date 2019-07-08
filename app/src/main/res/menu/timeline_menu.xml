@@ -5,7 +5,7 @@
         android:id="@+id/miCompose"
         android:icon="@drawable/vector_compose_fab"
         android:onClick="onCompose"
-        android:orderInCategory="1"
+        android:orderInCategory="2"
         android:title="Compose"
         app:showAsAction="always" />
 

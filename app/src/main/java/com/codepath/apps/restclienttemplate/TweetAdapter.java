@@ -41,7 +41,8 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder>{
 
          public void onBindViewHolder(ViewHolder holder, int position){
             Tweet tweet = tweets.get(position);
-            holder.tvUserName.setText(tweet.user.name + " @"+tweet.user.username);
+            holder.tvName.setText(tweet.user.name);
+            holder.tvUserName.setText("@"+tweet.user.username);
             holder.tvUserTweet.setText(tweet.body);
             holder.time.setText(getRelativeTimeAgo(tweet.createdAt));
 
@@ -88,6 +89,7 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder>{
         public class ViewHolder extends RecyclerView.ViewHolder {
 
             public ImageView ivProfileImage;
+            public TextView tvName;
             public TextView tvUserName;
             public TextView tvUserTweet;
             public TextView time;
@@ -97,8 +99,9 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder>{
                 super(itemView);
 
                 ivProfileImage = (ImageView) itemView.findViewById(R.id.ivProfileImage);
-                tvUserName = (TextView) itemView.findViewById(R.id.tvUserName);
+                tvName = (TextView) itemView.findViewById(R.id.tvName);
                 tvUserTweet = (TextView) itemView.findViewById(R.id.tvUserTweet);
+                tvUserName = (TextView) itemView.findViewById(R.id.tvUserName);
                 time = (TextView) itemView.findViewById(R.id.time);
                 btnReply = (ImageButton) itemView.findViewById(R.id.btnReply);
 
